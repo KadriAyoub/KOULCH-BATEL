@@ -4,13 +4,15 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import "./index.css";
 import MainLayout from "./layouts/mainLayout.jsx";
-import ProductDetails from "./pages/product details/ProductDetails.jsx";
 import Home from "./pages/home/Home.jsx";
+import ProductDetails from "./pages/product details/ProductDetails.jsx";
+import AddProduct from "./pages/addProduct/AddProduct.jsx";
+import NotFound from "./pages/notFound/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
+    element: <MainLayout />,
     children: [
       {
         path: "",
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
         path: "/Product_details",
         element: <ProductDetails />,
       },
+      {
+        path: "/add-product",
+        element: <AddProduct />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
     ],
   },
 ]);
@@ -27,5 +37,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 );
