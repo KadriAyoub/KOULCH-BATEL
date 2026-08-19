@@ -1,9 +1,9 @@
 {
     "nav": {
       "logo": "KOULCH BATEL",
-      "home": "Accueil",
-      "products": "Produits",
-      "about": "À propos",
+      "home": "home",
+      "products": "products",
+      "about": "about us",
       "contact": "Contact"
     }
   }
