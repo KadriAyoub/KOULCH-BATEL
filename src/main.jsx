@@ -6,6 +6,7 @@ import "./index.css";
 import MainLayout from "./layouts/mainLayout.jsx";
 import ProductDetails from "./pages/product details/ProductDetails.jsx";
 import Home from "./pages/home/Home.jsx";
+import "./i18n/i18n.js";
 
 const router = createBrowserRouter([
   {
