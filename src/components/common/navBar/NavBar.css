@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+.navBar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 64px;
+}
+
+.navBar-container h3 {
+    font-family: "Dela Gothic One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navBar-container ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    list-style: none;
+}
+
+.navBar-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container .icone {
+    margin: 8px;
+}
+
+.logo-container .active {
+    display: block;
+}
+
+.logo-container .hide {
+    display: none;
+}
+
+.logo-container button {
+    margin: 0 8px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
