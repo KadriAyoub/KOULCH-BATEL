@@ -4,11 +4,12 @@ import t_shirt from "../../assets/images/t-shirt.png";
 import PageNumber from "../../components/PageNumber/PageNumber";
 import ProductCard from "../../components/product/ProductCard";
 import "./Home.css";
+import AdsSwipper from "../../components/swipper/AdsSwipper";
 export default function Home() {
   return (
     <div className="home-page">
       <div className="ads-container">
-        <img className="ads" src={selecto} alt="selecto" />
+        <AdsSwipper/>
       </div>
       <div className="search-bar">
         <input type="text" placeholder="Search by name, categorie ..." />

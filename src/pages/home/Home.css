@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     padding: 40px 64px;
+    height: 375px;
 }
 
 .home-page .ads-container .ads {

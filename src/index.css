@@ -10,3 +10,9 @@
   --primary-color: #00229c;
   --secondary-color: #e4e4e4;
 }
+
+.ads-container {
+  width: 100%;
+  height: 250px; 
+}
+
