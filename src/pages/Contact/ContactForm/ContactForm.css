@@ -1,0 +1,612 @@
+.contact-form {
+  width: 100%;
+}
+
+/* =========================
+   Form Group
+========================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+
+.form-group > label {
+  margin-bottom: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #222222;
+}
+
+.form-group > label span {
+  color: #999999;
+  font-weight: 400;
+}
+
+/* =========================
+   Request Type
+========================= */
+
+.request-types {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  width: fit-content;
+}
+
+.request-type {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 135px;
+  height: 44px;
+
+  padding: 0 12px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #333333;
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.request-type:hover {
+  border-color: var(--primary-color);
+
+  transform: translateY(-1px);
+}
+
+.request-type.selected {
+  background: var(--primary-color);
+
+  border-color: var(--primary-color);
+
+  color: #ffffff;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.request-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #f3f3f3;
+
+  color: #666666;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.request-type.selected .request-number {
+  background: rgba(255, 255, 255, 0.22);
+
+  color: #ffffff;
+}
+
+.request-name {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   Inputs
+========================= */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dedede;
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  padding: 12px 14px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  color: #222222;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input {
+  height: 48px;
+}
+
+.form-group textarea {
+  min-height: 125px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #ababab;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   CV Upload
+========================= */
+
+.hidden-file-input {
+  display: none;
+}
+
+.cv-upload {
+  width: 100%;
+
+  min-height: 82px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 14px;
+
+  border: 1px dashed #d4d4d4;
+
+  border-radius: 9px;
+
+  background: #fafafa;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cv-upload:hover {
+  border-color: var(--primary-color);
+
+  background: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+.cv-upload-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7e7e7;
+}
+
+.cv-upload-icon box-icon {
+  width: 21px;
+  height: 21px;
+}
+
+.cv-upload-content {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.cv-upload-title {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #222222;
+}
+
+.cv-upload-text {
+  font-size: 11px;
+
+  color: #999999;
+}
+
+.cv-upload-button {
+  flex-shrink: 0;
+
+  padding: 8px 13px;
+
+  border-radius: 6px;
+
+  background: var(--primary-color);
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   Selected CV
+========================= */
+
+.cv-file-selected {
+  width: 100%;
+
+  min-height: 76px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #dedede;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.035);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cv-file-selected:hover {
+  border-color: var(--primary-color);
+
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.05);
+}
+
+.cv-file-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #f7f7f7;
+
+  border: 1px solid #e5e5e5;
+}
+
+.cv-file-icon box-icon {
+  width: 21px;
+  height: 21px;
+}
+
+.cv-file-info {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.cv-file-name {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #222222;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.cv-file-details {
+  font-size: 10px;
+
+  color: #999999;
+
+  text-transform: uppercase;
+}
+
+.cv-file-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+}
+
+.cv-selected {
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  color: var(--primary-color);
+}
+
+.cv-selected box-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.cv-change {
+  padding: 6px 9px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  color: #444444;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.cv-change:hover {
+  border-color: var(--primary-color);
+
+  color: var(--primary-color);
+
+  background: #fafafa;
+}
+
+.cv-remove {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #f5f5f5;
+
+  color: #666666;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cv-remove:hover {
+  background: #eeeeee;
+
+  color: #111111;
+}
+
+.cv-remove box-icon {
+  width: 15px;
+  height: 15px;
+}
+
+/* =========================
+   File Hint
+========================= */
+
+.file-hint {
+  display: block;
+
+  margin-top: 6px;
+
+  font-size: 10px;
+
+  color: #999999;
+}
+
+/* =========================
+   Submit
+========================= */
+
+.contact-submit {
+  width: 100%;
+
+  height: 50px;
+
+  margin-top: 5px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: var(--primary-color);
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-submit:hover {
+  opacity: 0.9;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-submit:active {
+  transform: scale(0.99);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+  .cv-file-selected {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+  .cv-file-actions {
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .request-types {
+    width: 100%;
+  }
+
+  .request-type {
+    min-width: 0;
+
+    flex: 1;
+
+    height: 44px;
+
+    padding: 0 10px;
+  }
+
+  .request-name {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-group {
+    margin-bottom: 17px;
+  }
+
+  .form-group input {
+    height: 46px;
+  }
+
+  .form-group textarea {
+    min-height: 115px;
+  }
+
+  .cv-upload {
+    gap: 9px;
+
+    padding: 12px;
+  }
+
+  .cv-upload-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .cv-upload-text {
+    display: none;
+  }
+
+  .cv-upload-button {
+    padding: 7px 10px;
+  }
+
+  .cv-file-selected {
+    padding: 11px;
+  }
+
+  .cv-file-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .cv-selected {
+    display: none;
+  }
+}
+
