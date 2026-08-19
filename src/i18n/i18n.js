@@ -1,10 +1,10 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-import en from './Locals/en.json';
-import ar from './Locals/ar.json';
-
-const savedLanguage = localStorage.getItem('language');
+import en from "./Locals/en.json";
+import ar from "./Locals/ar.json";
+import fr from "./Locals/fr.json";
 
 const resources = {
   en: {
@@ -13,14 +13,27 @@ const resources = {
   ar: {
     translation: ar,
   },
+  fr: {
+    translation: fr,
+  },
 };
 
 i18n
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    lng: savedLanguage || 'en',
-    fallbackLng: 'en',
+
+    fallbackLng: "en",
+
+    supportedLngs: ["en", "ar", "fr"],
+
+    detection: {
+      order: ["localStorage", "navigator"],
+      lookupLocalStorage: "language",
+      caches: ["localStorage"],
+    },
+
     interpolation: {
       escapeValue: false,
     },
