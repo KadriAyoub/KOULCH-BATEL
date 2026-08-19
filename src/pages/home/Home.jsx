@@ -3,8 +3,9 @@ import selecto from "../../assets/images/selecto.png";
 import t_shirt from "../../assets/images/t-shirt.png";
 import PageNumber from "../../components/PageNumber/PageNumber";
 import ProductCard from "../../components/product/ProductCard";
-import "./Home.css";
 import AdsSwipper from "../../components/swipper/AdsSwipper";
+import "./Home.css";
+
 export default function Home() {
   return (
     <div className="home-page">
