@@ -1,15 +1,15 @@
 import './ProductDetails.css'
 import 'boxicons'
 import { useState, useEffect } from 'react'
+import watch from '../../assets/images/apple watch.jpg'
+import bottle from '../../assets/images/bottle.jpg'
+import headPhone from '../../assets/images/headPhone.jpg'
+import rayban from '../../assets/images/rayban glasses.jpg'
+
 
 const SIZES = ['S', 'M', 'L', 'XL', 'XXL']
 
-const IMAGES = [
-    '',
-    '',
-    '',
-    ''
-]
+const IMAGES = [ watch, bottle, headPhone, rayban]
 
 // how many seconds are left to still get next-day delivery
 const DELIVERY_WINDOW_SECONDS = 2 * 60 * 60 + 30 * 60 // 02:30:00
