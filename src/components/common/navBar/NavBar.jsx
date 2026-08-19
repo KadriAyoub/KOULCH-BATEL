@@ -27,7 +27,9 @@ export default function NavBar() {
   return (
     <nav className="navBar-container">
       {/* Logo */}
-      <h3>{t("nav.logo")}</h3>
+      <Link to="/" className="navbar-logo">
+        KOULCHI BATEL
+      </Link>
 
       {/* Navigation */}
       <ul>
