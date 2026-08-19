@@ -53,3 +53,37 @@
     color: white;
     border: none;
 }
+
+
+
+.language {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .language .icone {
+    cursor: pointer;
+  }
+  
+  .language-select {
+    position: absolute;
+    top: 35px;
+    right: 0;
+  
+    width: 120px;
+    padding: 8px 10px;
+  
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  
+    background: white;
+    color: #222;
+  
+    font-size: 14px;
+  
+    outline: none;
+    cursor: pointer;
+  
+    z-index: 1000;
+  }
