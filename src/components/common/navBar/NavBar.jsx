@@ -3,7 +3,7 @@ import "./NavBar.css";
 import "boxicons";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../i18n/i18n";
-
+import { Link } from "react-router"
 export default function NavBar() {
   const { t } = useTranslation();
 
