@@ -12,13 +12,13 @@ export default function Home() {
       <div className="ads-container">
         <AdsSwipper/>
       </div>
-      <div className="search-bar">
+      <div id="search-bar" className="search-bar">
         <input type="text" placeholder="Search by name, categorie ..." />
         <button>
           <box-icon className="icon" name="filter-alt" color="white"></box-icon>
         </button>
       </div>
-      <div className="product-container">
+      <div id="products-container" className="product-container">
         <ProductCard image={t_shirt} />
         <ProductCard image={t_shirt} />
         <ProductCard image={t_shirt} />

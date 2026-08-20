@@ -28,7 +28,7 @@ export default function NavBar() {
     <nav className="navBar-container">
       {/* Logo */}
       <Link to="/" className="navbar-logo">
-        KOULCHI BATEL
+        {t("nav.logo")}
       </Link>
 
       {/* Navigation */}
@@ -38,7 +38,7 @@ export default function NavBar() {
         </li>
 
         <li>
-          <a href="#">{t("nav.products")}</a>
+          <a href="#search-bar">{t("nav.products")}</a>
         </li>
 
         <li>
