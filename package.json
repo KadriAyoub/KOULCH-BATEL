@@ -18,8 +18,10 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-i18next": "^17.0.11",
+    "react-loader-spinner": "^8.0.2",
     "react-router": "^8.3.0",
     "swiper": "^14.1.0",
+    "yet-another-react-lightbox": "^3.32.2",
     "zustand": "^5.0.15"
   },
   "devDependencies": {

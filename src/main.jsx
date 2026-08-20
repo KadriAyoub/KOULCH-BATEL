@@ -10,6 +10,7 @@ import MainLayout from "./layouts/mainLayout.jsx";
 import ProductDetails from "./pages/product details/ProductDetails.jsx";
 import Home from "./pages/home/Home.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+import Loading from "./pages/loading/Loading.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path:"",
+        path: "",
         element: <Home />,
       },
       {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
     ],
+  },
+  {
+    path: "loading",
+    element: <Loading />,
   },
 ]);
 

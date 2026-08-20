@@ -2,10 +2,16 @@ import './ProductDetails.css'
 import 'boxicons'
 import { useState, useEffect } from 'react'
 import formatTime from '../../utils/formatTime'
+//lightBox
+import Lightbox from "yet-another-react-lightbox"
+import Zoom from "yet-another-react-lightbox/plugins/zoom"
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
+import "yet-another-react-lightbox/styles.css"
+import "yet-another-react-lightbox/plugins/thumbnails.css"
 import watch from '../../assets/images/apple watch.jpg'
 import bottle from '../../assets/images/bottle.jpg'
 import headPhone from '../../assets/images/headPhone.jpg'
-import rayban from '../../assets/images/rayban glasses.jpg'
+import rayban from '../../assets/images/rayban-glasses.jpg'
 
 
 
@@ -22,6 +28,9 @@ export default function ProductDetails() {
     const [isWishlisted, setIsWishlisted] = useState(false)
     const [secondsLeft, setSecondsLeft] = useState(DELIVERY_WINDOW_SECONDS)
     const [openSection, setOpenSection] = useState({ description: true, shipping: true })
+    //lightBox
+    const [lightboxOpen, setLightboxOpen] = useState(false)
+    const slides = IMAGES.map((src) => ({ src }))
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -38,7 +47,23 @@ export default function ProductDetails() {
         <div>
             <section className="product-section">
                 <div className="images-section">
-                    <img src={IMAGES[activeImage]} alt="product image" className='hero-img' />
+                    <img
+                        src={IMAGES[activeImage]}
+                        alt="product image"
+                        className="hero-img"
+                        onClick={() => setLightboxOpen(true)}
+                    />
+
+                    <Lightbox
+                        open={lightboxOpen}
+                        close={() => setLightboxOpen(false)}
+                        slides={slides}
+                        index={activeImage}
+                        on={{
+                            view: ({ index }) => setActiveImage(index),
+                        }}
+                        plugins={[Zoom, Thumbnails]}
+                    />
                     <div className="product-thumbnails">
                         {IMAGES.map((image, index) => (
                             <img
