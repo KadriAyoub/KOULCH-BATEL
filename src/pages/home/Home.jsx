@@ -7,7 +7,6 @@ import PreLoader from "../../config/perloader/PreLoader";
 import "./Home.css";
 
 import { useEffect } from "react";
-import { createProduct, getProducts } from "../../services/productServices";
 import { getProducts } from "../../services/productServices";
 import { useState } from "react";
 
