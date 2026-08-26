@@ -5,13 +5,32 @@ import ProductCard from "../../components/product/ProductCard";
 import AdsSwipper from "../../components/swipper/AdsSwipper";
 import PreLoader from "../../config/perloader/PreLoader";
 import "./Home.css";
+import { use } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { createProduct, getProducts } from "../../services/productServices";
+import { useState } from "react";
 
 export default function Home() {
+  const [data, setData] = useState([]);
+  console.log("🚀 ~ Home ~ data:", data);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await getProducts();
+        setData(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProducts();
+  }, []);
   return (
     <div className="home-page">
       <PreLoader/>
       <div className="ads-container">
-        <AdsSwipper/>
+        <AdsSwipper />
       </div>
       <div id="search-bar" className="search-bar">
         <input type="text" placeholder="Search by name, categorie ..." />
@@ -20,18 +39,19 @@ export default function Home() {
         </button>
       </div>
       <div id="products-container" className="product-container">
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
-        <ProductCard image={t_shirt} />
+        {data.map((product) => {
+          return (
+            <>
+              <ProductCard
+                image={t_shirt}
+                name={product.name}
+                images={product.images}
+                description={product.description}
+                price={product.price}
+              />
+            </>
+          );
+        })}
       </div>
       <div className="page-numbers">
         <PageNumber number={1} />
