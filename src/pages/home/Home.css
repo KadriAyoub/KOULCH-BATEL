@@ -11,6 +11,7 @@
     align-items: center;
     padding: 40px 64px;
     height: 375px;
+    width: 100%;
 }
 
 .home-page .ads-container .ads {

@@ -1,14 +1,15 @@
 import "boxicons";
-import selecto from "../../assets/images/selecto.png";
 import t_shirt from "../../assets/images/t-shirt.png";
 import PageNumber from "../../components/PageNumber/PageNumber";
 import ProductCard from "../../components/product/ProductCard";
 import AdsSwipper from "../../components/swipper/AdsSwipper";
+import PreLoader from "../../config/perloader/PreLoader";
 import "./Home.css";
 
 export default function Home() {
   return (
     <div className="home-page">
+      <PreLoader/>
       <div className="ads-container">
         <AdsSwipper/>
       </div>

@@ -38,7 +38,7 @@
 }
 
 .navBar-container ul a {
-  transition: color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .navBar-container ul a:hover {
