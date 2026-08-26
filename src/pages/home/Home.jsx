@@ -5,7 +5,9 @@ import ProductCard from "../../components/product/ProductCard";
 import AdsSwipper from "../../components/swipper/AdsSwipper";
 import PreLoader from "../../config/perloader/PreLoader";
 import "./Home.css";
+
 import { useEffect } from "react";
+import { createProduct, getProducts } from "../../services/productServices";
 import { getProducts } from "../../services/productServices";
 import { useState } from "react";
 

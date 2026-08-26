@@ -89,34 +89,111 @@
 
 
 
+/* ================= Language ================= */
+
 .language {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.language .icone {
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.language .icone:hover {
+  transform: rotate(8deg) scale(1.08);
+}
+
+/* Language menu */
+
+.language-buttons {
+  position: absolute;
+  top: 42px;
+  right: -8px;
+
+  width: 110px;
+  padding: 7px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.10),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+
+  z-index: 1000;
+
+  animation: languageMenu 0.2s ease-out;
+}
+
+@keyframes languageMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.96);
   }
-  
-  .language .icone {
-    cursor: pointer;
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
-  
-  .language-select {
-    position: absolute;
-    top: 35px;
-    right: 0;
-  
-    width: 120px;
-    padding: 8px 10px;
-  
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  
-    background: white;
-    color: #222;
-  
-    font-size: 14px;
-  
-    outline: none;
-    cursor: pointer;
-  
-    z-index: 1000;
-  }
+}
+
+/* Buttons */
+
+.language-buttons button {
+  width: 100%;
+
+  margin: 0;
+  padding: 9px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #333;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.language-buttons button:hover {
+  background: #f4f5f8;
+  color: var(--primary-color);
+
+  transform: translateX(2px);
+}
+
+/* Active language */
+
+.language-buttons button.active-language {
+  background: var(--primary-color);
+  color: white;
+}
+
+.language-buttons button.active-language:hover {
+  background: var(--primary-color);
+  color: white;
+
+  transform: translateX(0);
+}

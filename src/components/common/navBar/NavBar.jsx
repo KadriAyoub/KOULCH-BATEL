@@ -13,51 +13,62 @@ export default function NavBar() {
 
   const [language, setLanguage] = useState(i18n.language || "en");
 
-  const changeLanguage = (e) => {
-    const selectedLanguage = e.target.value;
-
+  const changeLanguage = (selectedLanguage) => {
     i18n.changeLanguage(selectedLanguage);
 
     localStorage.setItem("language", selectedLanguage);
 
     setLanguage(selectedLanguage);
-
     setShowLanguage(false);
   };
 
   return (
     <nav className="navBar-container">
-      {/* Logo */}
+
+      {/* ================= Logo ================= */}
       <Link to="/" className="navbar-logo">
         {t("nav.logo")}
       </Link>
 
-      {/* Navigation */}
+      {/* ================= Navigation ================= */}
       <ul>
         <li>
-          <Link to="/">{t("nav.home")}</Link>
+          <Link to="/">
+            {t("nav.home")}
+          </Link>
         </li>
 
         <li>
-          <a href="#search-bar">{t("nav.products")}</a>
+          <a href="#search-bar">
+            {t("nav.products")}
+          </a>
         </li>
 
         <li>
-          <a href="#">{t("nav.about")}</a>
+          <a href="#about">
+            {t("nav.about")}
+          </a>
         </li>
 
         <li>
-          <Link to="/contact">{t("nav.contact")}</Link>
+          <Link to="/contact">
+            {t("nav.contact")}
+          </Link>
         </li>
       </ul>
 
-      {/* Icons */}
+      {/* ================= Icons ================= */}
       <div className="logo-container">
-        {/* Search */}
-        <box-icon className="icone" name="search" />
 
-        {/* Language */}
+        {/* Search */}
+        <box-icon
+          className="icone"
+          name="search"
+        />
+
+        {/* ================= Language ================= */}
         <div className="language">
+
           <box-icon
             className="icone"
             name="globe"
@@ -65,29 +76,46 @@ export default function NavBar() {
           />
 
           {showLanguage && (
-            <select
-              className="language-select"
-              value={language}
-              onChange={changeLanguage}
-            >
-              <option value="en">English</option>
-              <option value="fr">Français</option>
-              <option value="ar">العربية</option>
-            </select>
+            <div className="language-buttons">
+
+              <button
+                className={language === "en" ? "active-language" : ""}
+                onClick={() => changeLanguage("en")}
+              >
+                EN
+              </button>
+
+              <button
+                className={language === "fr" ? "active-language" : ""}
+                onClick={() => changeLanguage("fr")}
+              >
+                FR
+              </button>
+
+              <button
+                className={language === "ar" ? "active-language" : ""}
+                onClick={() => changeLanguage("ar")}
+              >
+                AR
+              </button>
+
+            </div>
           )}
+
         </div>
 
-        {/* User */}
+        {/* ================= User Icon ================= */}
         <box-icon
           className={`icone ${login ? "hide" : "active"}`}
           name="user"
         />
 
-        {/* Login */}
+        {/* ================= Login ================= */}
         <div className={`login ${login ? "active" : "hide"}`}>
           <button>Sign In</button>
           <button>Log In</button>
         </div>
+
       </div>
     </nav>
   );
