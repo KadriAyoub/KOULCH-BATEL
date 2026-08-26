@@ -35,9 +35,7 @@ export default function NavBar() {
       {/* Navigation */}
       <ul>
         <li>
-          <Link to="/">
-            <a href="#">{t("nav.home")}</a>
-          </Link>
+          <Link to="/">{t("nav.home")}</Link>
         </li>
 
         <li>
@@ -49,9 +47,7 @@ export default function NavBar() {
         </li>
 
         <li>
-          <Link to="/contact">
-            <a href="#">{t("nav.contact")}</a>
-          </Link>
+          <Link to="/contact">{t("nav.contact")}</Link>
         </li>
       </ul>
 

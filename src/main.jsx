@@ -3,16 +3,17 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
-import "./index.css";
 import "./i18n/i18n.js";
+import "./index.css";
 
 import MainLayout from "./layouts/mainLayout.jsx";
-import ProductDetails from "./pages/product details/ProductDetails.jsx";
-import Home from "./pages/home/Home.jsx";
+import LogIn from "./pages/auth/log in/LogIn.jsx";
+import SignUp from "./pages/auth/sign up/SignUp.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+import Home from "./pages/home/Home.jsx";
 import Loading from "./pages/loading/Loading.jsx";
-import LogIn from './pages/auth/log in/LogIn.jsx'
-import SignUp from './pages/auth/sign up/SignUp.jsx'
+import ProductDetails from "./pages/product details/ProductDetails.jsx";
+import Profile from "./pages/profile/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
         path: "contact",
         element: <Contact />,
       },
+      { path: "profile", element: <Profile /> },
     ],
   },
   {
@@ -50,5 +52,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );
