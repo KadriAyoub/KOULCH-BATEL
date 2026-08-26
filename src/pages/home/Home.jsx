@@ -5,10 +5,8 @@ import ProductCard from "../../components/product/ProductCard";
 import AdsSwipper from "../../components/swipper/AdsSwipper";
 import PreLoader from "../../config/perloader/PreLoader";
 import "./Home.css";
-import { use } from "react";
 import { useEffect } from "react";
-import axios from "axios";
-import { createProduct, getProducts } from "../../services/productServices";
+import { getProducts } from "../../services/productServices";
 import { useState } from "react";
 
 export default function Home() {
