@@ -108,7 +108,7 @@
 .auth-button {
     height: 52px;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     background: var(--primary-color);
     color: white;
     font-family: inherit;
