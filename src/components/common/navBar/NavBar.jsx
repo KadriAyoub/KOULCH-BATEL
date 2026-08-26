@@ -1,9 +1,10 @@
-import { useState } from "react";
-import "./NavBar.css";
 import "boxicons";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 import i18n from "../../../i18n/i18n";
-import { Link } from "react-router"
+import "./NavBar.css";
+
 export default function NavBar() {
   const { t } = useTranslation();
 
@@ -34,7 +35,9 @@ export default function NavBar() {
       {/* Navigation */}
       <ul>
         <li>
-          <a href="#">{t("nav.home")}</a>
+          <Link to="/">
+            <a href="#">{t("nav.home")}</a>
+          </Link>
         </li>
 
         <li>
@@ -46,7 +49,9 @@ export default function NavBar() {
         </li>
 
         <li>
-          <a href="#">{t("nav.contact")}</a>
+          <Link to="/contact">
+            <a href="#">{t("nav.contact")}</a>
+          </Link>
         </li>
       </ul>
 

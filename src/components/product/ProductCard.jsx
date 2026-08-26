@@ -1,6 +1,6 @@
+import "boxicons";
 import { Link } from "react-router";
-import 'boxicons'
-import './ProductCard.css'
+import "./ProductCard.css";
 
 export default function Product({ images ,name ,description ,price}) {
 

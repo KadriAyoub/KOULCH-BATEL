@@ -1,0 +1,27 @@
+.preloader {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: whitesmoke;
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 5px solid var(--primary-color);
+}
+
+.pre-texts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.text-line span {
+  display: block;
+  margin: 5px;
+}
