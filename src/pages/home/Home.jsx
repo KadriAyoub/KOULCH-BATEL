@@ -47,6 +47,7 @@ export default function Home() {
                 images={product.images}
                 description={product.description}
                 price={product.price}
+                id={product._id}
               />
             </>
           );
