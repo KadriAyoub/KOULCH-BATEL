@@ -2,7 +2,7 @@ import "boxicons";
 import { Link } from "react-router";
 import "./ProductCard.css";
 
-export default function Product({ images, name, description, price }) {
+export default function Product({ images, name, description, price ,id }) {
   return (
     <div className="product-card">
       <img src={images} alt="product image" />
@@ -12,7 +12,7 @@ export default function Product({ images, name, description, price }) {
       </div>
       <div className="bottom-card">
         <p>{price} DZD</p>
-        <Link to="/product-details" target="_blank">
+        <Link to={`/product-details/${id}`} target="_blank">
           <button>
             <box-icon name="right-arrow-alt" color="#ffffff"></box-icon>
           </button>
