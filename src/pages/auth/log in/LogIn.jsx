@@ -1,9 +1,44 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import Swal from "sweetalert2";
+import { useAuthStore } from "../../../store/useAuthStore";
 import "./Login.css";
 
 export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    
+    const login = useAuthStore((state) => state.login);
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const result = login(email, password);
+        if (result.success) {
+            Swal.fire({
+                title: "Logged In!",
+                text: `Welcome back, ${result.user.name}!`,
+                icon: "success",
+                timer: 1500,
+                showConfirmButton: false,
+            }).then(() => {
+                if (result.user.role === "admin") {
+                    navigate("/admin");
+                } else {
+                    navigate("/");
+                }
+            });
+        } else {
+            Swal.fire({
+                title: "Login Failed",
+                text: result.message || "Invalid credentials. For Admin, use admin@koulchbatel.com / admin123.",
+                icon: "error",
+                confirmButtonText: "Try Again",
+                confirmButtonColor: "#00229c",
+            });
+        }
+    };
 
     return (
         <main className="auth-page">
@@ -15,7 +50,7 @@ export default function Login() {
                         <h1>Log In</h1>
                     </div>
 
-                    <form className="auth-form">
+                    <form className="auth-form" onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
 
@@ -23,6 +58,9 @@ export default function Login() {
                                 id="email"
                                 type="email"
                                 placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
                             />
                         </div>
 
@@ -38,6 +76,9 @@ export default function Login() {
                                     id="password"
                                     type={showPassword ? "text" : "password"}
                                     placeholder="Enter your password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
                                 />
 
                                 <box-icon

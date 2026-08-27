@@ -10,9 +10,52 @@
 :root {
   --primary-color: #00229c;
   --secondary-color: #e4e4e4;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f5f8;
+  --text-primary: #111111;
+  --text-secondary: #757575;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --navbar-bg: #ffffff;
+  --card-bg: #ffffff;
+  --input-bg: #e4e4e4;
+  --input-text: #111111;
+  --globe-hover-bg: #f4f5f8;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --shadow-nav: rgba(0, 34, 156, 0.1);
+}
+
+[data-theme="dark"] {
+  --primary-color: #3b82f6;
+  --secondary-color: #2c2c2c;
+
+  --bg-primary: #121212;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --navbar-bg: #1e1e1e;
+  --card-bg: #1e1e1e;
+  --input-bg: #2d2d2d;
+  --input-text: #ffffff;
+  --globe-hover-bg: #2d2d2d;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --shadow-nav: rgba(0, 0, 0, 0.5);
 }
 
 html,body{
     scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+box-icon:not([color]) {
+  fill: var(--text-primary);
+  stroke: var(--text-primary);
+  transition: fill 0.3s ease, stroke 0.3s ease;
 }
 

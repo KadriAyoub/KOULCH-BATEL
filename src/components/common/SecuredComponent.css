@@ -1,0 +1,97 @@
+.access-denied-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+  padding: 40px 20px;
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.access-denied-card {
+  max-width: 480px;
+  width: 100%;
+  background: var(--navbar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: lockBounce 0.6s ease-out;
+}
+
+.lock-icon-container {
+  background-color: rgba(239, 68, 68, 0.1);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+}
+
+.lock-icon-container box-icon {
+  fill: #ef4444 !important;
+  stroke: #ef4444 !important;
+}
+
+.access-denied-card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.access-denied-message {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.access-denied-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.access-denied-actions .action-btn {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.access-denied-actions .action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.access-denied-actions .primary-btn {
+  background-color: var(--primary-color);
+  color: white !important;
+}
+
+.access-denied-actions .secondary-btn {
+  background-color: var(--secondary-color);
+  color: var(--text-primary) !important;
+}
+
+@keyframes lockBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -14,6 +14,8 @@ import Home from "./pages/home/Home.jsx";
 import Loading from "./pages/loading/Loading.jsx";
 import ProductDetails from "./pages/product details/ProductDetails.jsx";
 import Profile from "./pages/profile/Profile.jsx";
+import SecuredComponent from "./components/common/SecuredComponent.jsx";
+import AdminDashboard from "./pages/admin/AdminDashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       { path: "profile", element: <Profile /> },
+      {
+        path: "admin",
+        element: (
+          <SecuredComponent requiredRole="admin">
+            <AdminDashboard />
+          </SecuredComponent>
+        ),
+      },
     ],
   },
   {

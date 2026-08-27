@@ -1,21 +1,64 @@
-import React, { useRef, useState } from "react";
 import "boxicons";
+import { useRef, useState } from "react";
+import Swal from "sweetalert2";
+import { createContact } from "../../../services/contactServices";
 import "./ContactForm.css";
 
 function ContactForm() {
   const [type, setType] = useState("reclamation");
+
+  const [complainForm, setComplainForm] = useState({
+    firstname: "",
+    email: "",
+    complain: "",
+  });
+  console.log("🚀 ~ ContactForm ~ complainForm:", complainForm);
+
   const [cvFile, setCvFile] = useState(null);
 
   const fileInputRef = useRef(null);
 
   // =========================
+  // Handle Input Change
+  // =========================
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setComplainForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  // =========================
   // Submit
   // =========================
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Form submitted");
+    try {
+      const response = await createContact(complainForm);
+
+      Swal.fire({
+        title: "Good job!",
+        text: "form submited succefuly",
+        icon: "success",
+      });
+
+      setComplainForm({
+        firstname: "",
+        email: "",
+        complain: "",
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `somthing went wrong : ${error.message}`,
+      });
+    }
   };
 
   // =========================
@@ -118,50 +161,58 @@ function ContactForm() {
           Name
       ========================= */}
 
-      <div className="form-group">
-        <label htmlFor="name">First Name / Last Name</label>
-
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Enter your first and last name"
-          required
-        />
-      </div>
-
-      {/* =========================
-          Email
-      ========================= */}
-
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
-
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your email address"
-          required
-        />
-      </div>
-
-      {/* =========================
-          Complaint
-      ========================= */}
-
       {type === "reclamation" && (
-        <div className="form-group">
-          <label htmlFor="complaint">Reason for the Complaint</label>
+        <>
+          <div className="form-group">
+            <label htmlFor="firstname">First Name / Last Name</label>
 
-          <textarea
-            id="complaint"
-            name="complaint"
-            placeholder="Describe the reason for your complaint..."
-            rows="6"
-            required
-          />
-        </div>
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              placeholder="Enter your first and last name"
+              value={complainForm.firstname}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* =========================
+              Email
+          ========================= */}
+
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              value={complainForm.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* =========================
+              Complaint
+          ========================= */}
+
+          <div className="form-group">
+            <label htmlFor="complain">Reason for the Complaint</label>
+
+            <textarea
+              id="complain"
+              name="complain"
+              placeholder="Describe the reason for your complaint..."
+              rows="6"
+              value={complainForm.complain}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </>
       )}
 
       {/* =========================

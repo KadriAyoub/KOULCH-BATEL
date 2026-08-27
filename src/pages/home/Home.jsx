@@ -6,28 +6,25 @@ import AdsSwipper from "../../components/swipper/AdsSwipper";
 import PreLoader from "../../config/perloader/PreLoader";
 import "./Home.css";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getProducts } from "../../services/productServices";
-import { useState } from "react";
 
 export default function Home() {
   const [data, setData] = useState([]);
-  console.log("🚀 ~ Home ~ data:", data);
-
+  const fetchProducts = async () => {
+    try {
+      const data = await getProducts();
+      setData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const data = await getProducts();
-        setData(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     fetchProducts();
   }, []);
   return (
     <div className="home-page">
-      <PreLoader/>
+      <PreLoader />
       <div className="ads-container">
         <AdsSwipper />
       </div>
