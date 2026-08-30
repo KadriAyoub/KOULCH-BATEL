@@ -19,11 +19,11 @@
   font-size: 13px;
   font-weight: 600;
 
-  color: #222222;
+  color: var(--text-primary);
 }
 
 .form-group > label span {
-  color: #999999;
+  color: var(--text-secondary);
   font-weight: 400;
 }
 
@@ -51,12 +51,12 @@
 
   padding: 0 12px;
 
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
 
-  background: #ffffff;
+  background: var(--bg-primary);
 
-  color: #333333;
+  color: var(--text-primary);
 
   font-family: inherit;
 
@@ -100,9 +100,9 @@
 
   border-radius: 50%;
 
-  background: #f3f3f3;
+  background: var(--bg-secondary);
 
-  color: #666666;
+  color: var(--text-secondary);
 
   font-size: 9px;
   font-weight: 700;
@@ -132,10 +132,10 @@
 
   box-sizing: border-box;
 
-  border: 1px solid #dedede;
+  border: 1px solid var(--border-color);
   border-radius: 7px;
 
-  background: #ffffff;
+  background: var(--input-bg);
 
   padding: 12px 14px;
 
@@ -143,7 +143,7 @@
 
   font-size: 14px;
 
-  color: #222222;
+  color: var(--input-text);
 
   outline: none;
 
@@ -166,7 +166,7 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #ababab;
+  color: var(--text-secondary);
 }
 
 .form-group input:focus,
@@ -198,11 +198,11 @@
 
   padding: 14px;
 
-  border: 1px dashed #d4d4d4;
+  border: 1px dashed var(--border-color);
 
   border-radius: 9px;
 
-  background: #fafafa;
+  background: var(--bg-secondary);
 
   cursor: pointer;
 
@@ -215,7 +215,7 @@
 .cv-upload:hover {
   border-color: var(--primary-color);
 
-  background: #ffffff;
+  background: var(--bg-primary);
 
   transform: translateY(-1px);
 }
@@ -232,9 +232,9 @@
 
   border-radius: 7px;
 
-  background: #ffffff;
+  background: var(--bg-primary);
 
-  border: 1px solid #e7e7e7;
+  border: 1px solid var(--border-color);
 }
 
 .cv-upload-icon box-icon {
@@ -258,13 +258,13 @@
 
   font-weight: 600;
 
-  color: #222222;
+  color: var(--text-primary);
 }
 
 .cv-upload-text {
   font-size: 11px;
 
-  color: #999999;
+  color: var(--text-secondary);
 }
 
 .cv-upload-button {
@@ -301,11 +301,11 @@
 
   padding: 12px 14px;
 
-  border: 1px solid #dedede;
+  border: 1px solid var(--border-color);
 
   border-radius: 9px;
 
-  background: #ffffff;
+  background: var(--bg-primary);
 
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.035);
 
@@ -332,9 +332,9 @@
 
   border-radius: 7px;
 
-  background: #f7f7f7;
+  background: var(--bg-secondary);
 
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border-color);
 }
 
 .cv-file-icon box-icon {
@@ -358,7 +358,7 @@
 
   font-weight: 600;
 
-  color: #222222;
+  color: var(--text-primary);
 
   overflow: hidden;
 
@@ -370,7 +370,7 @@
 .cv-file-details {
   font-size: 10px;
 
-  color: #999999;
+  color: var(--text-secondary);
 
   text-transform: uppercase;
 }
@@ -405,13 +405,13 @@
 .cv-change {
   padding: 6px 9px;
 
-  border: 1px solid #dddddd;
+  border: 1px solid var(--border-color);
 
   border-radius: 5px;
 
-  background: #ffffff;
+  background: var(--bg-primary);
 
-  color: #444444;
+  color: var(--text-primary);
 
   font-size: 10px;
 
@@ -430,7 +430,7 @@
 
   color: var(--primary-color);
 
-  background: #fafafa;
+  background: var(--bg-secondary);
 }
 
 .cv-remove {
@@ -447,9 +447,9 @@
 
   border-radius: 5px;
 
-  background: #f5f5f5;
+  background: var(--bg-secondary);
 
-  color: #666666;
+  color: var(--text-secondary);
 
   cursor: pointer;
 
@@ -459,9 +459,9 @@
 }
 
 .cv-remove:hover {
-  background: #eeeeee;
+  background: var(--bg-primary);
 
-  color: #111111;
+  color: var(--text-primary);
 }
 
 .cv-remove box-icon {
@@ -480,7 +480,7 @@
 
   font-size: 10px;
 
-  color: #999999;
+  color: var(--text-secondary);
 }
 
 /* =========================
@@ -609,4 +609,3 @@
     display: none;
   }
 }
-

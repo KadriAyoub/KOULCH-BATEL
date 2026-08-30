@@ -55,17 +55,19 @@
     border: 1px solid var(--secondary-color);
     border-radius: 50px;
     font-size: 13px;
-    color: #555;
+    color: var(--text-secondary);
 }
 
 .description-section h1 {
     font-size: 32px;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .product-price {
     font-size: 24px;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 /* Delivery notice */
@@ -79,18 +81,18 @@
     border: 1px solid var(--secondary-color);
     border-radius: 50px;
     font-size: 14px;
-    color: #555;
+    color: var(--text-secondary);
 }
 
 .delivery-notice strong {
-    color: #111;
+    color: var(--text-primary);
 }
 
 /* Size selector */
 
 .section-label {
     font-size: 14px;
-    color: #777;
+    color: var(--text-secondary);
     margin-bottom: 12px;
 }
 
@@ -105,7 +107,8 @@
     padding: 0 4px;
     border-radius: 50%;
     border: 1px solid var(--secondary-color);
-    background-color: white;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -151,7 +154,8 @@
     flex-shrink: 0;
     border-radius: 50%;
     border: 1px solid var(--secondary-color);
-    background-color: white;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,6 +166,7 @@
 .wishlist-btn.active {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+    color: white;
 }
 
 /* Accordion */
@@ -181,11 +186,12 @@
 .accordion-header h4 {
     font-size: 16px;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .accordion-content {
     margin-top: 12px;
-    color: #777;
+    color: var(--text-secondary);
     line-height: 1.6;
     font-size: 14px;
 }
@@ -218,12 +224,13 @@
 
 .shipping-label {
     font-size: 13px;
-    color: #777;
+    color: var(--text-secondary);
 }
 
 .shipping-value {
     font-size: 14px;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 @media (max-width: 900px) {

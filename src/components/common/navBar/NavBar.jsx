@@ -73,17 +73,9 @@ export default function NavBar() {
       {/* ================= Icons ================= */}
       <div className="logo-container">
 
-        {/* Burger Menu Icon */}
-        <div className="burger-menu" onClick={() => setMenuOpen(!menuOpen)}>
-          <box-icon
-            className="icone"
-            name={menuOpen ? "x" : "menu"}
-          />
-        </div>
-
         {/* Search */}
         <box-icon
-          className="icone"
+          className="icone search-icon"
           name="search"
         />
 
@@ -150,6 +142,14 @@ export default function NavBar() {
             </Link>
           </div>
         )}
+
+        {/* Burger Menu Icon - Now after login */}
+        <div className="burger-menu" onClick={() => setMenuOpen(!menuOpen)}>
+          <box-icon
+            className="icone"
+            name={menuOpen ? "x" : "menu"}
+          />
+        </div>
 
       </div>
     </nav>

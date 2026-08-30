@@ -88,6 +88,18 @@
     background-color: var(--primary-color);
     color: white;
     border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logo-container button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.logo-container button:active {
+    transform: scale(0.95);
+    opacity: 0.8;
 }
 
 
@@ -243,6 +255,11 @@
 @media (max-width: 768px) {
   .navBar-container {
     padding: 16px 20px;
+    position: relative; /* Ensure children position relative to this */
+  }
+
+  .search-icon {
+    display: none;
   }
 
   .burger-menu {
@@ -251,19 +268,28 @@
 
   .navBar-container ul {
     position: absolute;
-    top: 70px;
+    top: 100%; /* Precisely at the bottom border of the navbar */
     left: 0;
     width: 100%;
     background-color: var(--navbar-bg);
     flex-direction: column;
     gap: 0;
-    display: none;
     box-shadow: 0 10px 20px var(--shadow-color);
     z-index: 99;
+
+    /* Slider Animation: Growing from the bottom border */
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when closed */
+    transform: scaleY(0);
+    transform-origin: top; /* Expand downwards from the top edge */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    display: flex;
   }
 
   .navBar-container ul.active {
-    display: flex;
+    opacity: 1;
+    pointer-events: auto; /* Enable interaction when open */
+    transform: scaleY(1); /* Fully expand downwards */
   }
 
   .navBar-container ul li {
