@@ -218,3 +218,68 @@
   background-color: var(--globe-hover-bg);
   transform: scale(1.08);
 }
+/* ... existing styles ... */
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.burger-menu .icone {
+  font-size: 28px;
+}
+
+@media (max-width: 1024px) {
+  .navBar-container {
+    padding: 24px 32px;
+  }
+  .navBar-container ul {
+    width: auto;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navBar-container {
+    padding: 16px 20px;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .navBar-container ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-bg);
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    z-index: 99;
+  }
+
+  .navBar-container ul.active {
+    display: flex;
+  }
+
+  .navBar-container ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navBar-container ul li a {
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+  }
+
+  .logo-container button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

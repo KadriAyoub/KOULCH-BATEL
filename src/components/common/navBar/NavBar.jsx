@@ -14,6 +14,7 @@ export default function NavBar() {
 
   const [login, setLogin] = useState(true);
   const [showLanguage, setShowLanguage] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const [language, setLanguage] = useState(i18n.language || "en");
 
@@ -35,33 +36,33 @@ export default function NavBar() {
       </Link>
 
       {/* ================= Navigation ================= */}
-      <ul>
-        <li>
+      <ul className={menuOpen ? "active" : ""}>
+        <li onClick={() => setMenuOpen(false)}>
           <Link to="/">
             {t("nav.home")}
           </Link>
         </li>
 
-        <li>
+        <li onClick={() => setMenuOpen(false)}>
           <a href="#search-bar">
             {t("nav.products")}
           </a>
         </li>
 
-        <li>
+        <li onClick={() => setMenuOpen(false)}>
           <a href="#about">
             {t("nav.about")}
           </a>
         </li>
 
-        <li>
+        <li onClick={() => setMenuOpen(false)}>
           <Link to="/contact">
             {t("nav.contact")}
           </Link>
         </li>
 
         {user?.role === "admin" && (
-          <li>
+          <li onClick={() => setMenuOpen(false)}>
             <Link to="/admin" style={{ fontWeight: "700", color: "var(--primary-color)" }}>
               Admin
             </Link>
@@ -71,6 +72,14 @@ export default function NavBar() {
 
       {/* ================= Icons ================= */}
       <div className="logo-container">
+
+        {/* Burger Menu Icon */}
+        <div className="burger-menu" onClick={() => setMenuOpen(!menuOpen)}>
+          <box-icon
+            className="icone"
+            name={menuOpen ? "x" : "menu"}
+          />
+        </div>
 
         {/* Search */}
         <box-icon

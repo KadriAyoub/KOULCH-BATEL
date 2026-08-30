@@ -35,18 +35,17 @@ export default function Home() {
         </button>
       </div>
       <div id="products-container" className="product-container">
-        {data.map((product) => {
+        {data?.map((product) => {
           return (
-            <>
-              <ProductCard
-                image={t_shirt}
-                name={product.name}
-                images={product.images}
-                description={product.description}
-                price={product.price}
-                id={product._id}
-              />
-            </>
+            <ProductCard
+              key={product._id}
+              image={t_shirt}
+              name={product.name}
+              images={product.images}
+              description={product.description}
+              price={product.price}
+              id={product._id}
+            />
           );
         })}
       </div>

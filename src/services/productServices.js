@@ -5,7 +5,7 @@ const baseurl = `${import.meta.env.VITE_API}/products`;
 export const getProducts = async () => {
   try {
     const response = await axios.get(baseurl);
-    return response.data.produits;
+    return response.data.produits || [];
   } catch (error) {
     console.error("Error fetching products:", error);
     throw error;
